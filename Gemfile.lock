@@ -151,7 +151,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass (~> 2.1.1.0)
+  bootstrap-sass
   coffee-rails (~> 3.2.1)
   growl (= 1.0.3)
   guard-rspec (= 1.2.1)
