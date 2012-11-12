@@ -1,4 +1,22 @@
-<h1>
-<%= gravatar_for @user %>
-<%= @user.name %>
-</h1>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+Stats
+          </section>
+        </aside>
+          <div class="span8">
+           Foloowers
+              <h3>Microposts</h3>
+              <ol class="microposts">
+            <strong>Name</strong> <%= @user.name %><br />
+            <strong>URL</strong>  <%= link_to user_path(@user), @user %><br />          
+            </ol>
+          end posts
+          </div>
+        </div>
