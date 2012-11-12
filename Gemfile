@@ -25,5 +25,7 @@ group :test do
   gem 'rspec-rails', '2.11.0'
   gem 'rb-fsevent', '0.9.1', :require => false
   gem 'growl', '1.0.3'
+  gem 'factory_girl_rails', '1.0'
+
 end
 
