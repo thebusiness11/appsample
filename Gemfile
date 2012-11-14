@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 gem "bootstrap-sass", "~> 2.1.1.0"
 gem 'pg'
 gem 'gravatar_image_tag'
+gem 'newrelic_rpm'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
