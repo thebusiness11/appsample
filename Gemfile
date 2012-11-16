@@ -5,6 +5,8 @@ gem "bootstrap-sass", "~> 2.1.1.0"
 gem 'pg'
 gem 'gravatar_image_tag'
 gem 'newrelic_rpm'
+gem 'will_paginate'
+gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails', '2.11.0'
