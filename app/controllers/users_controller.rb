@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate, :only => [:edit, :update]
+
 
   def show
     @user = User.find(params[:id])
@@ -23,6 +25,7 @@ class UsersController < ApplicationController
   end
   
   def edit
+  
     @user = User.find(params[:id])
     @title = "Edit User"
   end
@@ -30,11 +33,18 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
-    redirect_to @user, :flash => { :success => "You updated your profile bro!" }
+      redirect_to @user, :flash => { :success => "You updated your profile bro!" }
     else
     
-    @title = "Edit User"
-    render 'edit'
+      @title = "Edit User"
+      render 'edit'
+    end
   end
-end
+
+  private
+  
+  def authenticate
+    deny_access unless signed_in?
+  end
+  
 end
