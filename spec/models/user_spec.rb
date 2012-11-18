@@ -160,8 +160,14 @@ describe User do
         it "should retun user on success email/pass" do
           User.authenticate(@attr[:email], @attr[:password]).should == @user
         end
+      end
+      
+      describe "status feed" do
+        it "should have a feed" do
+          @user.should respond_to(:feed)
+        end
         
-    end
+      end
   end
 end
 
