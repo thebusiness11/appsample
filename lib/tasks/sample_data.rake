@@ -3,6 +3,8 @@ namespace :db do
   task populate: :environment do
     Rake::Task['db:reset'].invoke
     make_users
+    make_microposts
+end
 end
 
 def make_users
@@ -21,4 +23,11 @@ def make_users
                  password_confirmation: password)
   end
 end
+def make_microposts
+  50.times do
+    User.all(:limit => 6).each do |user|
+      user.microposts.create!(:content => Faker::Lorem.sentence(5))
+    end
+  end
 end
+
