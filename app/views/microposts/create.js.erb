@@ -1,4 +1,4 @@
-$(".microposts")prepend("<%= escape_javascript(render(:partial => 'shared/feed_item', :object => @micropost)) %>")
+$(".microposts").slideDown(2222).prepend("<%= escape_javascript(render(:partial => 'shared/feed_item', :object => @micropost)) %>")
 // $(".new_micropost").fadeOut(300)
 $("#micropost_content").val("")
 $("#micropost_count").html("<%= current_user.microposts.count %> microposts")
