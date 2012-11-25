@@ -2,19 +2,31 @@ class MicropostsController < ApplicationController
   
   before_filter :authenticate
   before_filter :authroized_user, :only => :destroy
+ 
   def create
     @micropost = current_user.microposts.build(params[:micropost])
-    if @micropost.save!
-      respond_to do |format|
-        format.html { redirect_to @user }
+    respond_to do |format|
+      if @micropost.save!
+        format.html { redirect_to root_path }
         format.js
+      else
+        format.js { render :flash=>'alert("Cant have a blank tweet bro");' }
       end
+    end
   end
-end
+
+
+
+  def show
+    @micropost = current_user.microposts.build(params[:micropost])
+  end
 
   def destroy
     @micropost.destroy
-    redirect_to root_path, :flash => { :success => "Micropost deleted!" }
+    respond_to do |format|
+      format.html { redirect_to(@user) }
+      format.js
+    end
   end
 
   private

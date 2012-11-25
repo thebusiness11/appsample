@@ -1,0 +1,2 @@
+$("#micropost_count").html("(<%= current_user.microposts.count %>)")
+$('.edit_micropost_<%= @micropost.id %>').slideUp(500).fadeOut(500).remove(600);
