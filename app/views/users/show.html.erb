@@ -16,7 +16,7 @@
 
     <% if @user.microposts.any? %>
       <h3>Microposts <span id="micropost_count">(<%= @user.microposts.count %>)</span></h3>
-      <ol class="microposts">
+      <ol class="microposts endless_scroll_posts">
         <%= render @microposts %>
       </ol>
       <%= will_paginate @microposts %>
